@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, Input, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-incrementador',
@@ -6,17 +6,16 @@ import { Component, computed, signal } from '@angular/core';
   styles: ``
 })
 export class IncrementadorComponent {
-  public progreso = signal<number>(50);
-  public porcentaje = computed<string>( () => `${this.progreso()}%` );
+  // @Input('valor') progreso: number = 50;
+  @Input() progreso: number = 50;
 
   cambiarValor(valor: number) {
-    if (this.progreso() >= 100 && valor >= 0) {
-      return this.progreso.set(100);
+    if (this.progreso >= 100 && valor >= 0) {
+      this.progreso = 100;
+    } else if (this.progreso <= 0 && valor < 0) {
+      this.progreso = 0;
+    } else {
+      this.progreso = this.progreso + valor;
     }
-    if (this.progreso() <= 0 && valor < 0) {
-      return this.progreso.set(0);
-    }
-
-    this.progreso.set(this.progreso() + valor);
   }
 }
