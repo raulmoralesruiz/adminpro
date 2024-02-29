@@ -8,15 +8,15 @@ import { ChartData } from 'chart.js';
 })
 export class Grafica1Component {
   public labels1: string[] = [
-    'Download Sales',
-    'In-Store Sales',
-    'Mail-Order Sales',
+    'Pan',
+    'Chicharrones',
+    'Cerveza',
   ];
   public data1: ChartData<'doughnut'> = {
     labels: this.labels1,
     datasets: [
       {
-        data: [350, 450, 100],
+        data: [10, 22, 15],
         backgroundColor: ['red', 'green', 'blue']
       },
     ],
