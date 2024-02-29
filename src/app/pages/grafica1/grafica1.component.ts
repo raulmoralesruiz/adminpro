@@ -17,7 +17,7 @@ export class Grafica1Component {
     datasets: [
       {
         data: [10, 22, 15],
-        backgroundColor: ['red', 'green', 'blue']
+        backgroundColor: ['orange', 'teal', 'black']
       },
     ],
   };
