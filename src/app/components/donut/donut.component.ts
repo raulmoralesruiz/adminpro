@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 import { ChartData } from 'chart.js';
 
 @Component({
-  selector: 'app-grafica1',
-  templateUrl: './grafica1.component.html',
+  selector: 'app-donut',
+  templateUrl: './donut.component.html',
   styles: ``
 })
-export class Grafica1Component {
-  public labels1: string[] = [
+export class DonutComponent {
+  public doughnutChartLabels: string[] = [
     'Download Sales',
     'In-Store Sales',
     'Mail-Order Sales',
   ];
-  public data1: ChartData<'doughnut'> = {
-    labels: this.labels1,
+  public doughnutChartData: ChartData<'doughnut'> = {
+    labels: this.doughnutChartLabels,
     datasets: [
       {
         data: [350, 450, 100],
@@ -21,5 +21,4 @@ export class Grafica1Component {
       },
     ],
   };
-
 }
